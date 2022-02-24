@@ -42,7 +42,7 @@ public class NavigationMenuStepDefs {
 
     @When("the user navigates {string} {string}")
     public void the_user_navigates(String tab, String module) {
-       new DashboardPage().navigateToModule(tab,module);
+        new DashboardPage().navigateToModule(tab,module);
     }
 
     @Then("default page number should be {int}")

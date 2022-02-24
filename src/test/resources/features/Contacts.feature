@@ -11,7 +11,7 @@ Feature: Contacts page
   Scenario: Verify Create Calendar Event
     Given the user is on the login page
     And the user enter sales manager information
-    When the user navigates "Activities" "Calendar Events"
+    When the user navigates "Activities" "Calendar Event"
 
 
   Scenario: Menu options
@@ -21,6 +21,7 @@ Feature: Contacts page
       | Customers  |
       | Activities |
       | System     |
+
 
   Scenario: login as a given user
     Given the user is on the login page
@@ -58,8 +59,23 @@ Feature: Contacts page
       | storemanager85  | Marcella  | Huels    |
 
 
+  Scenario Outline: Default page number
+    Given the user is on the login page
+    And the user enter the driver information
+    When the user navigates "Customers" "Contacts"
+    Then default page number should be <number>
+    Examples:
+      |number|
+      |1     |
+      |2     |
+      |3     |
 
-
+  @wip
+  Scenario: Contacts test with email
+    Given the user logged in as "store manager"
+    And the user navigates "Customers" "Contacts"
+    When the user clicks the "mbrackstone9@example.com" from contacts
+    Then the information should be same with database
 
 
 
