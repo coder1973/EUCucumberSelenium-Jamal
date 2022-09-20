@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 public class CreateCalendarEventsPage extends BasePage {
 
     public CreateCalendarEventsPage(){
+
         PageFactory.initElements(Driver.get(), this);
     }
 
@@ -17,6 +18,7 @@ public class CreateCalendarEventsPage extends BasePage {
 
     @FindBy(css = "[id^='recurrence-repeats-view']")
     public WebElement repeatOptions;
+
     @FindBy(className = "select2-chosen")
     public WebElement selectedOwner;
 
@@ -25,6 +27,7 @@ public class CreateCalendarEventsPage extends BasePage {
 
     @FindBy(css = "[id^='date_selector_oro_calendar_event_form_start']")
     public WebElement startDate;
+
     @FindBy(css = "[id^='date_selector_oro_calendar_event_form_end']")
     public WebElement endDate;
 
@@ -50,6 +53,7 @@ public class CreateCalendarEventsPage extends BasePage {
     public WebElement by;
 
     public Select repeatOptionsList(){
+
         return new Select(repeatOptions);
     }
 
